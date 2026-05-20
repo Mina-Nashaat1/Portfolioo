@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Nashaat Habib | Portfolio</title>
+    <meta name="description" content="Portfolio of Mina Nashaat - Entry-level Data Analyst, Business Intelligence Analyst, Data Engineer, and Data Scientist based in Cairo, Egypt. Discover services, projects, and insights.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom Style System -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Moving Background -->
+    <canvas id="ambient-canvas"></canvas>
+    
+    <!-- Background Noise & Glow Overlays -->
+    <div class="bg-glow bg-glow-blue"></div>
+    <div class="bg-glow bg-glow-yellow"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Mina</span><span class="logo-accent">Nashaat</span><span class="logo-accent">Habib</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#skills-box" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#why-me" class="nav-link">Why Me?</a>
+                <a href="#contact" class="nav-link contact-btn">Contact</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-avatar-wrapper">
+                    <div class="glowing-ring ring-one"></div>
+                    <div class="glowing-ring ring-two"></div>
+                    <img src="Gemini.png" alt="Mina Nashaat" class="profile-img">
+                </div>
+                <div class="hero-content">
+                    <div class="badge-premium"><i class="fas fa-database"></i> Portfolio</div>
+                    <h1 class="hero-title">Mina Nashaat Habib</h1>
+                    <div class="roles-wrapper">
+                        <span class="roles-label">I'm a </span>
+                        <span class="roles-typing" id="rolesTyping"></span>
+                    </div>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/mina-nashaat-901638364" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:minanashaathabib24@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+                        <a href="tel:+201224824244" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="Mina Nashaat – Data Analyst Cv.pdf" download>
+                            <span>Download My CV</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="page-section section-padding">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text-card card">
+                    <p class="lead-text">
+                        I'm a passionate <strong>Entry-level Data Analyst | Business Intelligence Analyst</strong> with a strong foundation in a wide range of tools and technologies including <strong>Python, SQL, Power BI, and Tableau</strong>.
+                    </p>
+                    <p>
+                        My journey in data analytics has been fueled by a solid academic background, highlighted by a professional training from the <strong>National Telecommunication Institute (NTI)</strong> where I scored 98% and completed 8+ real-world projects. I excel in transforming raw data into clear, actionable insights through <strong>ETL processes, data visualization, and statistical analysis</strong>. I am dedicated to helping businesses make data-driven decisions that lead to tangible growth and success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Technologies -->
+        <section class="page-section section-padding" id="skills-box">
+            <div class="section-header text-center">
+                <h2>Skills & Technologies</h2>
+                <div class="header-line center"></div>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <span class="skill-name">SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-table"></i></div>
+                        <span class="skill-name">Pandas</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-calculator"></i></div>
+                        <span class="skill-name">NumPy</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                        <span class="skill-name">Power BI</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                        <span class="skill-name">Tableau</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <span class="skill-name">MySQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-warehouse"></i></div>
+                        <span class="skill-name">Data Warehousing</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-file-invoice"></i></div>
+                        <span class="skill-name">Reporting Analysis</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon"><i class="fas fa-sync-alt"></i></div>
+                        <span class="skill-name">ETL & ELT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="page-section section-padding">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Expected Graduation: 2026</span>
+                    <h4 class="timeline-title">Bachelor of Computer Science</h4>
+                    <span class="timeline-subtitle">Beni Suief University</span>
+                    <p class="timeline-desc">
+                        Currently pursuing a Bachelor's degree in Computer Science with a strong focus on <strong>Data Analytics, Programming, and Database Systems</strong>. Developing solid problem-solving and analytical skills through academic and practical projects.
+                    </p>
+                    <div class="timeline-tag">CGPA: 3.14</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="page-section section-padding">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="header-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Internship</span>
+                    <h4 class="timeline-title">Data Analyst Intern</h4>
+                    <span class="timeline-subtitle">National Telecommunication Institute (NTI)</span>
+                    <p class="timeline-desc">
+                        Applied advanced data analysis techniques to extract valuable insights and build impactful dashboards, contributing to a 98% score in the professional training program.
+                    </p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Internship</span>
+                    <h4 class="timeline-title">Intern</h4>
+                    <span class="timeline-subtitle">Commercial International Bank (CIB)</span>
+                    <p class="timeline-desc">
+                        Supported critical financial data processes, enhanced reporting efficiency, and ensured compliance checks in a dynamic banking environment.
+                    </p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Internship</span>
+                    <h4 class="timeline-title">Data Analyst Intern</h4>
+                    <span class="timeline-subtitle">National Telecommunication Institute Creativa (NTI)</span>
+                    <p class="timeline-desc">
+                        Completed the Data Analysis Skills for the Freelance Professional program offered by the National Telecommunication Institute (NTI) and Creativa Hub Beni-Suef, achieving a final score of 98%.
+                    </p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Freelance</span>
+                    <h4 class="timeline-title">Freelance Data Entry</h4>
+                    <span class="timeline-subtitle">Agri-Maser Website</span>
+                    <p class="timeline-desc">
+                        Efficiently managed and maintained product data, ensuring high accuracy and timely updates that supported seamless website operations.
+                    </p>
+                </div>
+                <div class="timeline-item card">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Freelance</span>
+                    <h4 class="timeline-title">Freelance Data Analysis Projects</h4>
+                    <span class="timeline-subtitle">Freelance Yard</span>
+                    <p class="timeline-desc">
+                        Completed +3 freelance data analysis projects on Freelance Yard, applying data cleaning, analysis, and visualization techniques to solve real-world business problems using Excel, SQL, and Power BI.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="page-section section-padding">
+            <div class="section-header text-center">
+                <h2>Services I Offer</h2>
+                <div class="header-line center"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis & Reporting</h3>
+                    <p>From raw data to powerful insights. I'll help you understand your data, find key trends, and create clear, compelling reports that drive business strategy.</p>
+                </div>
+                <div class="service-card card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Dashboard Design & Development</h3>
+                    <p>Building professional, interactive dashboards with Power BI, Excel, and Tableau to visualize complex data and provide a clear overview for business owners.</p>
+                </div>
+                <div class="service-card card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Data Cleaning & ETL</h3>
+                    <p>I transform messy, unstructured data into clean, usable datasets using efficient ETL/ELT processes to ensure accuracy and reliability for all your analytics projects.</p>
+                </div>
+                <div class="service-card card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>Designing and implementing robust database systems from the ground up to ensure data integrity, security, and scalability across platforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="page-section section-padding">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="projects-grid">
+                <a href="about.html" target="_blank" class="project-card-link">
+                    <div class="project-card card">
+                        <div class="project-badge"><i class="fas fa-star"></i> Featured</div>
+                        <div class="project-icon"><i class="fas fa-chart-area"></i></div>
+                        <div class="project-content">
+                            <h3>Dashboard Design & Development</h3>
+                            <p>
+                                Building professional, interactive dashboards with Power BI, Excel, and Tableau to visualize complex data and provide a clear overview for business owners.
+                            </p>
+                            <div class="project-footer">
+                                <span class="project-tech">Power BI</span>
+                                <span class="project-tech">Excel</span>
+                                <span class="project-tech">Tableau</span>
+                                <span class="view-link">View Project <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Why Work With Me Section -->
+        <section id="why-me" class="page-section section-padding">
+            <div class="section-header text-center">
+                <h2>Why Work With Me?</h2>
+                <div class="header-line center"></div>
+            </div>
+            <div class="why-me-container card">
+                <div class="why-me-grid">
+                    <div class="why-me-item">
+                        <div class="why-me-number">01</div>
+                        <div class="why-me-content">
+                            <h4>Strategic Approach</h4>
+                            <p>I treat every project like a <strong>strategic business decision</strong>, not just a technical task. I connect data metrics to your overall business goals.</p>
+                        </div>
+                    </div>
+                    <div class="why-me-item">
+                        <div class="why-me-number">02</div>
+                        <div class="why-me-content">
+                            <h4>Accuracy & Speed</h4>
+                            <p>My work is characterized by <strong>high accuracy, prompt delivery, and crystal-clear communication</strong> at every phase.</p>
+                        </div>
+                    </div>
+                    <div class="why-me-item">
+                        <div class="why-me-number">03</div>
+                        <div class="why-me-content">
+                            <h4>Actionable Insights</h4>
+                            <p>I deliver <strong>actionable insights</strong> that empower you to act and capture opportunities, rather than just observing metrics.</p>
+                        </div>
+                    </div>
+                    <div class="why-me-item">
+                        <div class="why-me-number">04</div>
+                        <div class="why-me-content">
+                            <h4>Intuitive Dashboards</h4>
+                            <p>I specialize in building <strong>intuitive dashboards</strong> that simplify complex data and seamlessly guide decision-makers to clarity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-me-cta">
+                    <p class="cta-message">Let’s turn your data into your smartest decision yet. 💡</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section section-padding">
+            <div class="section-header text-center">
+                <h2>Get in Touch</h2>
+                <div class="header-line center"></div>
+            </div>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info-cards">
+                    <div class="contact-card card clickable" onclick="window.location.href='mailto:minanashaathabib24@gmail.com'">
+                        <div class="contact-icon"><i class="far fa-envelope"></i></div>
+                        <h3>Email Me</h3>
+                        <p class="contact-value">minanashaathabib24@gmail.com</p>
+                        <span class="contact-action">Send a message <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                    
+                    <div class="contact-card card clickable" onclick="window.open('https://www.linkedin.com/in/mina-nashaat-901638364', '_blank')">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <h3>LinkedIn</h3>
+                        <p class="contact-value">Mina Nashaat</p>
+                        <span class="contact-action">Let's connect <i class="fas fa-chevron-right"></i></span>
+                    </div>
+
+                    <div class="contact-card card clickable" onclick="window.location.href='tel:+201224824244'">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h3>Call Me</h3>
+                        <p class="contact-value">+20 122 482 4244</p>
+                        <span class="contact-action">Direct call <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Mina Nashaat Habib. All rights reserved.</p>
+            <p class="footer-sub">Designed with precision &bull; Driven by Data</p>
+        </div>
+    </footer>
+
+    <!-- Core Script System -->
+    <script src="script.js"></script>
+</body>
+</html>

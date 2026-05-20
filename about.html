@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mina Nashaat Habib | Dashboard Projects</title>
+    <meta name="description" content="Explore interactive dashboards built with Power BI, Excel, and Tableau by Mina Nashaat. Data visualization, storytelling, and actionable insights.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Shared Custom Style System -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="projects-page">
+    <!-- Ambient Moving Background -->
+    <canvas id="ambient-canvas"></canvas>
+    
+    <!-- Background Noise & Glow Overlays -->
+    <div class="bg-glow bg-glow-blue"></div>
+    <div class="bg-glow bg-glow-yellow"></div>
+    <div class="noise-overlay"></div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <span class="logo-text">Mina</span><span class="logo-accent">Nashaat</span><span class="logo-accent">Habib</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-section show" style="margin-top: 3rem;">
+        <div class="section-header text-center" style="margin-bottom: 4rem;">
+            <div class="badge-premium"><i class="fas fa-chart-bar"></i> Interactive Dashboards</div>
+            <h1 class="hero-title" style="background: linear-gradient(135deg, #ffffff 60%, var(--accent-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 3.5rem; text-align: center; margin-top: 0.5rem;">My Projects Portfolio</h1>
+            <p style="color: var(--accent-yellow); font-weight: 600; letter-spacing: 2px; font-size: 1.1rem; text-transform: uppercase;">Power BI &bull; Excel &bull; Tableau</p>
+            <div class="header-line center" style="margin-top: 1.5rem;"></div>
+        </div>
+
+        <div class="projects-details-wrapper" style="display: flex; flex-direction: column; gap: 3rem;">
+            
+            <!-- Excel Projects Card -->
+            <div class="project-card card" style="border-left: 4px solid var(--accent-yellow);">
+                <div class="project-badge"><i class="fas fa-file-excel"></i> Spreadsheet Analytics</div>
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Excel Projects</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">I have worked with large and complex datasets, utilizing Microsoft Excel's advanced data modeling, pivot reporting, power queries, and formulas to build highly interactive analytical dashboards.</p>
+                </div>
+                
+                <div class="project-buttons-group" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <button class="btn-primary" onclick="toggleDetails('excelDetails1')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-eye"></i> <span>View Excel Dashboard</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('excelDetails2')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-chart-line"></i> <span>View Sales by Year Dashboard</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('excelDetails3')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fab fa-netflix"></i> <span>Netflix Under the Microscope</span>
+                    </button>
+                </div>
+
+                <!-- Excel Project 1 Details -->
+                <div id="excelDetails1" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="1.png" alt="Excel Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> Sales & Performance Dashboard</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">I designed an analytical dashboard to visualize product performance, sales, and profits across 10 countries over the past 4 years. The dashboard is built on accurate data and visual analysis to help decision-makers extract clear, actionable insights.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7349728841658998784-HzYI" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Excel Project 2 Details -->
+                <div id="excelDetails2" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="2.png" alt="Excel Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> Sales by Year Dashboard</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">I designed an analytical dashboard that visualizes sales from 2011 to 2018, analyzing yearly growth rates, product category trends, and regional sales distribution.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7350486014148194304-R3hk" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Excel Project 3 Details -->
+                <div id="excelDetails3" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="6.png" alt="Excel Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> Netflix Under the Microscope</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">An analysis of 200 Netflix titles revealing production trends, audience demand, and fresh opportunities from a whole new angle. Designed to extract catalog insights, genres, and release dynamics.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7358417611816136704-eLNr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFqBthEBXAVY2rTxzpzMzK5tWyZKargXRpY" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Power BI Projects Card -->
+            <div class="project-card card" style="border-left: 4px solid var(--accent-blue);">
+                <div class="project-badge"><i class="fas fa-chart-area"></i> Business Intelligence</div>
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Power BI Projects</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">Utilizing advanced DAX queries, star schema data modeling, ETL data cleaning, and dynamic row-level security (RLS) within Microsoft Power BI Desktop to craft premium corporate reports.</p>
+                </div>
+                
+                <div class="project-buttons-group" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <button class="btn-primary" onclick="toggleDetails('powerDetails1')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-film"></i> <span>Top 250 Movies Rating</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('powerDetails2')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-heartbeat"></i> <span>Fitbit Campaign Analysis</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('powerDetails3')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-globe-americas"></i> <span>Product & Territory Overview</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('powerDetails4')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-bed"></i> <span>Sleep & Lifestyle Insights</span>
+                    </button>
+                    <button class="btn-primary" onclick="toggleDetails('powerDetails5')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-futbol"></i> <span>Winning Football Insights</span>
+                    </button>
+                </div>
+
+                <!-- Power BI 1 Details -->
+                <div id="powerDetails1" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="3.png" alt="Power BI Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> Top 250 Movie Rating Analysis</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">I analyzed data for the top 250 highest-rated movies in history, highlighting correlations between genres, release years, directors, box office revenue, and IMDB audience ratings.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7351998078414962688-YJGk" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Power BI 2 Details -->
+                <div id="powerDetails2" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <video controls loop muted style="width: 100%; display: block; border-radius: 8px;">
+                            <source src="4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-video" style="color: var(--accent-blue);"></i> Fitbit Marketing Campaign Analysis</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">I worked on analyzing data from a marketing campaign for the Fitbit product, exploring key performance metrics like daily active users, calories burned, sleep metrics, and campaign ROI to uncover insights that support strategic decisions.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-marketinganalytics-powerbi-activity-7353417469169942530-IpXD" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Power BI 3 Details -->
+                <div id="powerDetails3" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <video controls loop muted style="width: 100%; display: block; border-radius: 8px;">
+                            <source src="5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-video" style="color: var(--accent-blue);"></i> Product & Territory Performance Overview</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Product and territory insights showing top-performing regions, product categories, and key areas for growth and optimization. Leveraged geochart mappings and multi-slicing systems.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7355494313746731009-MrMs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFqBthEBXAVY2rTxzpzMzK5tWyZKargXRpY" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Power BI 4 Details -->
+                <div id="powerDetails4" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <video controls loop muted style="width: 100%; display: block; border-radius: 8px;">
+                            <source src="6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-video" style="color: var(--accent-blue);"></i> Sleep & Lifestyle Insights Analysis</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">A health-focused analysis of 374 individuals exploring how age, gender, stress, activity, and profession impact sleep quality, resting heart rates, and physical habits.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-%F0%9F%93%8A-901638364_dataanalysis-dashboarddesign-exceldashboard-activity-7354101650984222721-lO4A?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFqBthEBXAVY2rTxzpzMzK5tWyZKargXRpY" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Power BI 5 Details -->
+                <div id="powerDetails5" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="7.png" alt="Power BI Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> From 13,000 Matches to Winning Insights</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">Analyzing Kaggle football data during my NTI training revealed key trends, performance gaps, and game-changing recommendations across 13,000 matches.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/posts/mina-nashaat-901638364_footballanalytics-dataanalysis-sportsdata-activity-7360873468193656832-TwQa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFqBthEBXAVY2rTxzpzMzK5tWyZKargXRpY" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau Projects Card -->
+            <div class="project-card card" style="border-left: 4px solid var(--accent-yellow);">
+                <div class="project-badge"><i class="fas fa-chart-pie"></i> Visual Storytelling</div>
+                <div style="margin-bottom: 2rem;">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Tableau Projects</h2>
+                    <p style="color: var(--text-muted); font-size: 1.05rem;">Designing interactive storyboards and analytics workbooks in Tableau Public. Focus on high-speed rendering, calculated fields, and robust level of detail (LOD) expressions.</p>
+                </div>
+                
+                <div class="project-buttons-group" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <button class="btn-primary" onclick="toggleDetails('tableauDetails1')" style="padding: 0.8rem 1.8rem; font-size: 0.9rem; background: rgba(0, 191, 255, 0.1); border: 1px solid rgba(0, 191, 255, 0.3); color: var(--accent-blue); box-shadow: none;">
+                        <i class="fas fa-chart-line"></i> <span>Sales Overview Dashboard</span>
+                    </button>
+                </div>
+
+                <!-- Tableau 1 Details -->
+                <div id="tableauDetails1" class="project-details-expanded card" style="display: none; margin-top: 2rem; background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255,255,255,0.03);">
+                    <div class="media-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                        <img src="5.png" alt="Tableau Dashboard Screenshot" style="width: 100%; display: block; max-height: 550px; object-fit: contain; background: #000;">
+                    </div>
+                    <h4 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem;"><i class="fas fa-info-circle" style="color: var(--accent-blue);"></i> Sales Overview Dashboard</h4>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">This dashboard provides a sales overview with region-wise comparisons, performance trends, seasonal distribution analysis, and dynamic customer segment groupings.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/in/mina-nashaat-901638364" target="_blank" class="linkedin-view-link" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: var(--transition-smooth);">
+                            <i class="fab fa-linkedin"></i> <span>View Post and details in LinkedIn</span> <i class="fas fa-chevron-right" style="font-size: 0.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Mina Nashaat Habib. All rights reserved.</p>
+            <p class="footer-sub">Designed with precision &bull; Driven by Data</p>
+        </div>
+    </footer>
+
+    <!-- Toggle and Script Orchestrator -->
+    <script>
+        // Expanded Details Handler (Sleek Accordion & Scroll-into-view)
+        function toggleDetails(id) {
+            const allDetails = document.querySelectorAll('.project-details-expanded');
+            const targetDetails = document.getElementById(id);
+            const isAlreadyOpen = targetDetails.style.display === "block";
+
+            // Elegant close other open details within same container if desired,
+            // or just simple toggle with smooth reveal:
+            if (isAlreadyOpen) {
+                targetDetails.style.opacity = "0";
+                targetDetails.style.transform = "translateY(15px)";
+                setTimeout(() => {
+                    targetDetails.style.display = "none";
+                }, 300);
+            } else {
+                targetDetails.style.display = "block";
+                targetDetails.style.opacity = "0";
+                targetDetails.style.transform = "translateY(15px)";
+                
+                // Force repaint
+                targetDetails.offsetHeight;
+
+                // Animate entry
+                targetDetails.style.transition = "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)";
+                targetDetails.style.opacity = "1";
+                targetDetails.style.transform = "translateY(0)";
+
+                // Smooth scroll directly to the newly expanded element
+                setTimeout(() => {
+                    targetDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+    </script>
+    <!-- Core Script System (reusing floating canvas and layout animations) -->
+    <script src="script.js"></script>
+</body>
+</html>
