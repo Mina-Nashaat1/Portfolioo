@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mina Nashaat Habib | Dashboard Projects</title>
-    <meta name="description" content="Explore interactive dashboards built with Power BI, Excel, and Tableau by Mina Nashaat. Data visualization, storytelling, and actionable insights.">
+    <title>Mina Nashaat Habib Botros | Dashboard Projects</title>
+    <meta name="description" content="Explore interactive dashboards built with Power BI, Excel, and Tableau by Mina Nashaat Habib Botros. Data visualization, storytelling, and actionable insights.">
     
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,6 +253,38 @@
     <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Floating Interactive Theme Switcher Widget -->
+    <div class="theme-switcher-widget" id="themeSwitcher">
+        <div class="theme-switcher-toggle" id="themeToggleBtn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="theme-switcher-title">Customize Accent</div>
+        <div class="theme-options-grid">
+            <button class="theme-opt-btn active" data-theme="cyber">
+                <span class="theme-color-dot"></span>
+                <span>Cyber Sky (Default)</span>
+            </button>
+            <button class="theme-opt-btn" data-theme="emerald">
+                <span class="theme-color-dot"></span>
+                <span>Emerald Gold</span>
+            </button>
+            <button class="theme-opt-btn" data-theme="retro">
+                <span class="theme-color-dot"></span>
+                <span>Retro Violet</span>
+            </button>
+        </div>
+        <div class="cursor-toggle-wrapper">
+            <span class="toggle-switch-lbl">Custom Cursor</span>
+            <div class="toggle-switch-btn active" id="cursorToggleSwitch">
+                <div class="toggle-switch-knob"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Ambient Follow Cursor Elements -->
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+    <div class="custom-cursor-ring" id="customCursorRing"></div>
 
     <footer>
         <div class="footer-container">
