@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollObserver();
     initNavigation();
     initScrollTop();
+    initThemeSwitcher();
+    initCustomCursor();
+    initCardSpotlightAndTilt();
 });
 
 /**
@@ -24,6 +27,18 @@ function initAmbientCanvas() {
     const ctx = canvas.getContext("2d");
     let animationFrameId;
 
+    // Helper to convert hex to rgba
+    function hexToRgba(hex, alpha) {
+        hex = hex.replace("#", "").trim();
+        if (hex.length === 3) {
+            hex = hex.split("").map(c => c + c).join("");
+        }
+        const r = parseInt(hex.substring(0, 2), 16);
+        const g = parseInt(hex.substring(2, 4), 16);
+        const b = parseInt(hex.substring(4, 6), 16);
+        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
+
     // Canvas size tracking
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -36,20 +51,18 @@ function initAmbientCanvas() {
     let mouse = { x: 0.5, y: 0.5, targetX: 0.5, targetY: 0.5 };
 
     window.addEventListener("mousemove", (e) => {
-        // Slow target interpolation (prevents jerky motions)
         mouse.targetX = e.clientX / window.innerWidth;
         mouse.targetY = e.clientY / window.innerHeight;
     });
 
-    // Blob parameters: keeping motion extremely gentle & comfortable
+    // Blob parameters: keeping motion extremely gentle, now color-responsive
     const blobs = [
         {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            targetX: Math.random() * canvas.width,
-            targetY: Math.random() * canvas.height,
             size: 280,
-            color: "rgba(0, 191, 255, 0.08)", // Soft blue
+            colorKey: "--accent-blue",
+            alpha: 0.08,
             speed: 0.0006,
             angle: Math.random() * Math.PI * 2,
             radiusX: 180,
@@ -60,10 +73,9 @@ function initAmbientCanvas() {
         {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            targetX: Math.random() * canvas.width,
-            targetY: Math.random() * canvas.height,
             size: 320,
-            color: "rgba(255, 193, 7, 0.06)", // Soft yellow
+            colorKey: "--accent-yellow",
+            alpha: 0.06,
             speed: 0.0005,
             angle: Math.random() * Math.PI * 2,
             radiusX: 220,
@@ -74,10 +86,9 @@ function initAmbientCanvas() {
         {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            targetX: Math.random() * canvas.width,
-            targetY: Math.random() * canvas.height,
             size: 240,
-            color: "rgba(0, 191, 255, 0.05)", // Soft blue secondary
+            colorKey: "--accent-blue",
+            alpha: 0.05,
             speed: 0.0007,
             angle: Math.random() * Math.PI * 2,
             radiusX: 140,
@@ -94,11 +105,12 @@ function initAmbientCanvas() {
         mouse.x += (mouse.targetX - mouse.x) * 0.05;
         mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
+        // Fetch CSS color styles once per frame
+        const styles = getComputedStyle(document.documentElement);
+
         blobs.forEach((blob, idx) => {
-            // Update circular path trajectory
             blob.angle += blob.speed;
             
-            // Re-adjust centers if window resized
             if (idx === 0) {
                 blob.centerX = canvas.width * 0.25;
                 blob.centerY = canvas.height * 0.35;
@@ -110,24 +122,27 @@ function initAmbientCanvas() {
                 blob.centerY = canvas.height * 0.25;
             }
 
-            // Target coordinates incorporating gentle circle-math and mouse parallax
             const pathX = blob.centerX + Math.cos(blob.angle) * blob.radiusX;
             const pathY = blob.centerY + Math.sin(blob.angle) * blob.radiusY;
 
-            // Parallax influence (move slightly in opposition to cursor)
+            // Gentle parallax
             const mouseInfluenceX = (0.5 - mouse.x) * 120;
             const mouseInfluenceY = (0.5 - mouse.y) * 120;
 
             blob.x += (pathX + mouseInfluenceX - blob.x) * 0.03;
             blob.y += (pathY + mouseInfluenceY - blob.y) * 0.03;
 
-            // Render soft glowing gradient circle
+            // Fetch dynamic active color variable
+            const rawHex = styles.getPropertyValue(blob.colorKey).trim();
+            const color0 = hexToRgba(rawHex, blob.alpha);
+            const color5 = hexToRgba(rawHex, blob.alpha * 0.35);
+
             const gradient = ctx.createRadialGradient(
                 blob.x, blob.y, 0,
                 blob.x, blob.y, blob.size
             );
-            gradient.addColorStop(0, blob.color);
-            gradient.addColorStop(0.5, blob.color.replace("0.08", "0.03").replace("0.06", "0.02").replace("0.05", "0.01"));
+            gradient.addColorStop(0, color0);
+            gradient.addColorStop(0.5, color5);
             gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
 
             ctx.fillStyle = gradient;
@@ -141,7 +156,6 @@ function initAmbientCanvas() {
     
     animate();
 
-    // Clean up animation on reload/unload if needed
     window.addEventListener("unload", () => {
         cancelAnimationFrame(animationFrameId);
     });
@@ -155,7 +169,7 @@ function initTypewriter() {
     const rolesElement = document.getElementById("rolesTyping");
     if (!rolesElement) return;
 
-    const roles = ["Data Engineer", "Data Analyst", "Data Scientist"];
+    const roles = ["Data Analyst", "Junior Data Analyst"];
     let roleIdx = 0;
     let charIdx = 0;
     let isDeleting = false;
@@ -336,3 +350,243 @@ function initScrollTop() {
         });
     });
 }
+
+/**
+ * ==========================================================================
+ * 🎮 ADVANCED INTERACTIVE SUITE (AESTHETICS & WOW FACTOR)
+ * ==========================================================================
+ */
+
+/**
+ * 🎨 A. Accent Color & Theme Switcher Customizer
+ * Allows users to choose their favourite highlight palette.
+ */
+function initThemeSwitcher() {
+    const themeSwitcher = document.getElementById("themeSwitcher");
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+    const themeBtns = document.querySelectorAll(".theme-opt-btn");
+    
+    if (!themeSwitcher || !themeToggleBtn) return;
+    
+    // Toggle Slide-in Panel
+    themeToggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        themeSwitcher.classList.toggle("open");
+    });
+    
+    // Click outside to close panel
+    document.addEventListener("click", (e) => {
+        if (!themeSwitcher.contains(e.target)) {
+            themeSwitcher.classList.remove("open");
+        }
+    });
+
+    const themeColors = {
+        cyber: {
+            blue: "#00bfff",
+            blueRgb: "0, 191, 255",
+            yellow: "#ffc107",
+            yellowRgb: "255, 193, 7",
+            glowBlue: "rgba(0, 191, 255, 0.25)",
+            glowYellow: "rgba(255, 193, 7, 0.25)"
+        },
+        emerald: {
+            blue: "#00ffaa",
+            blueRgb: "0, 255, 170",
+            yellow: "#ffd700",
+            yellowRgb: "255, 215, 0",
+            glowBlue: "rgba(0, 255, 170, 0.25)",
+            glowYellow: "rgba(255, 215, 0, 0.25)"
+        },
+        retro: {
+            blue: "#a124ff",
+            blueRgb: "161, 36, 255",
+            yellow: "#00f0ff",
+            yellowRgb: "0, 240, 255",
+            glowBlue: "rgba(161, 36, 255, 0.25)",
+            glowYellow: "rgba(0, 240, 255, 0.25)"
+        }
+    };
+    
+    function applyTheme(theme) {
+        const colors = themeColors[theme];
+        if (!colors) return;
+        
+        // Update CSS Variables in root
+        const root = document.documentElement;
+        root.style.setProperty('--accent-blue', colors.blue);
+        root.style.setProperty('--accent-blue-rgb', colors.blueRgb);
+        root.style.setProperty('--accent-yellow', colors.yellow);
+        root.style.setProperty('--accent-yellow-rgb', colors.yellowRgb);
+        root.style.setProperty('--border-glow-blue', colors.glowBlue);
+        root.style.setProperty('--border-glow-yellow', colors.glowYellow);
+        
+        // Highlight active button
+        themeBtns.forEach(btn => {
+            if (btn.getAttribute("data-theme") === theme) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+        
+        // Save to local storage
+        localStorage.setItem("mina-portfolio-theme", theme);
+    }
+    
+    // Bind buttons
+    themeBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const theme = btn.getAttribute("data-theme");
+            applyTheme(theme);
+        });
+    });
+    
+    // Load saved theme or default
+    const savedTheme = localStorage.getItem("mina-portfolio-theme") || "cyber";
+    applyTheme(savedTheme);
+}
+
+
+/**
+ * 📍 B. Smooth Lag-Follow Custom Cursor
+ * Renders an elegant concentric hover ring trailing the mouse cursor.
+ */
+function initCustomCursor() {
+    const cursorDot = document.getElementById("customCursorDot");
+    const cursorRing = document.getElementById("customCursorRing");
+    const cursorToggle = document.getElementById("cursorToggleSwitch");
+    
+    if (!cursorDot || !cursorRing) return;
+    
+    let mousePos = { x: -100, y: -100 };
+    let dotPos = { x: -100, y: -100 };
+    let ringPos = { x: -100, y: -100 };
+    
+    // Tracking mouse coordinates
+    window.addEventListener("mousemove", (e) => {
+        mousePos.x = e.clientX;
+        mousePos.y = e.clientY;
+        
+        cursorDot.style.opacity = "1";
+        cursorRing.style.opacity = "1";
+    });
+    
+    // Lerp follow animation
+    function updateCursor() {
+        // Dot follows fast
+        dotPos.x += (mousePos.x - dotPos.x) * 0.3;
+        dotPos.y += (mousePos.y - dotPos.y) * 0.3;
+        
+        // Ring follows with a sleek lag delay (lerp factor 0.12)
+        ringPos.x += (mousePos.x - ringPos.x) * 0.12;
+        ringPos.y += (mousePos.y - ringPos.y) * 0.12;
+        
+        cursorDot.style.left = `${dotPos.x}px`;
+        cursorDot.style.top = `${dotPos.y}px`;
+        
+        cursorRing.style.left = `${ringPos.x}px`;
+        cursorRing.style.top = `${ringPos.y}px`;
+        
+        requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+    
+    // Handle expandable scale on interactive hovers
+    const interactiveSelectors = 'a, button, .clickable, .chart-metric-bar, .metric-mini-card, .menu-toggle, .theme-switcher-toggle';
+    
+    function attachHoverListeners() {
+        const hoverTargets = document.querySelectorAll(interactiveSelectors);
+        hoverTargets.forEach(target => {
+            // Prevent duplicate bindings
+            target.removeEventListener("mouseenter", addHoverClass);
+            target.removeEventListener("mouseleave", removeHoverClass);
+            
+            target.addEventListener("mouseenter", addHoverClass);
+            target.addEventListener("mouseleave", removeHoverClass);
+        });
+    }
+    
+    function addHoverClass() {
+        cursorRing.classList.add("hovered");
+    }
+    
+    function removeHoverClass() {
+        cursorRing.classList.remove("hovered");
+    }
+    
+    attachHoverListeners();
+    
+    // Re-attach hovers dynamically if DOM updates or scrolls
+    window.addEventListener("scroll", attachHoverListeners);
+    document.addEventListener("click", () => setTimeout(attachHoverListeners, 100));
+    
+    // Toggle active cursor preference
+    function toggleCursor(isActive) {
+        if (isActive) {
+            document.body.classList.add("custom-cursor-active");
+            if (cursorToggle) cursorToggle.classList.add("active");
+            localStorage.setItem("mina-custom-cursor", "on");
+        } else {
+            document.body.classList.remove("custom-cursor-active");
+            if (cursorToggle) cursorToggle.classList.remove("active");
+            localStorage.setItem("mina-custom-cursor", "off");
+        }
+    }
+    
+    if (cursorToggle) {
+        cursorToggle.addEventListener("click", () => {
+            const isCurrentlyOn = document.body.classList.contains("custom-cursor-active");
+            toggleCursor(!isCurrentlyOn);
+        });
+    }
+    
+    // Load user preference
+    const savedCursor = localStorage.getItem("mina-custom-cursor") || "on";
+    toggleCursor(savedCursor === "on");
+}
+
+
+function initCardSpotlightAndTilt() {
+    const cards = document.querySelectorAll(".card");
+    
+    cards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x coordinate relative to card
+            const y = e.clientY - rect.top;  // y coordinate relative to card
+            
+            // Update CSS Spotlight variables
+            card.style.setProperty("--spotlight-x", `${x}px`);
+            card.style.setProperty("--spotlight-y", `${y}px`);
+        });
+    });
+}
+
+
+/**
+ * 📊 D. Interactive Dashboard Tab Switching & Console Terminal Typewriter
+ * Performs dynamic querying and types feedback outputs inside our console box.
+ */
+window.switchDashboardTab = function(tabName) {
+    const skillsTab = document.getElementById("dash-tab-skills");
+    const milestonesTab = document.getElementById("dash-tab-milestones");
+    const skillsBtn = document.getElementById("btn-tab-skills");
+    const milestonesBtn = document.getElementById("btn-tab-milestones");
+    
+    if (!skillsTab || !milestonesTab) return;
+    
+    // Close other panes
+    if (tabName === "skills") {
+        skillsTab.classList.add("active");
+        milestonesTab.classList.remove("active");
+        if (skillsBtn) skillsBtn.classList.add("active");
+        if (milestonesBtn) milestonesBtn.classList.remove("active");
+    } else {
+        milestonesTab.classList.add("active");
+        skillsTab.classList.remove("active");
+        if (milestonesBtn) milestonesBtn.classList.add("active");
+        if (skillsBtn) skillsBtn.classList.remove("active");
+    }
+};
+
