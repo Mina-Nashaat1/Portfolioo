@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mina Nashaat Habib | Portfolio</title>
-    <meta name="description" content="Portfolio of Mina Nashaat - Entry-level Data Analyst, Business Intelligence Analyst, Data Engineer, and Data Scientist based in Cairo, Egypt. Discover services, projects, and insights.">
+    <title>Mina Nashaat Habib Botros | Portfolio</title>
+    <meta name="description" content="Portfolio of Mina Nashaat Habib Botros - Entry-level Data Analyst and Junior Data Analyst based in Cairo, Egypt. Discover services, projects, and insights.">
     
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
     <header>
         <nav class="nav-container">
             <div class="logo">
-                <span class="logo-text">Mina</span><span class="logo-accent">Nashaat</span><span class="logo-accent">Habib</span>
+                <span class="logo-text">Mina</span><span class="logo-accent">Nashaat</span>
             </div>
             <div class="nav-links">
                 <a href="#about" class="nav-link active">About</a>
@@ -94,6 +94,97 @@
                     <p>
                         My journey in data analytics has been fueled by a solid academic background, highlighted by a professional training from the <strong>National Telecommunication Institute (NTI)</strong> where I scored 98% and completed 8+ real-world projects. I excel in transforming raw data into clear, actionable insights through <strong>ETL processes, data visualization, and statistical analysis</strong>. I am dedicated to helping businesses make data-driven decisions that lead to tangible growth and success.
                     </p>
+                </div>
+
+                <!-- Interactive Data Analyst Dashboard Widget -->
+                <div class="interactive-dashboard card">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title-wrapper">
+                            <span class="dashboard-dot pulsing"></span>
+                            <span class="dashboard-title">Mina's Career Analytics Hub</span>
+                        </div>
+                        <div class="dashboard-tabs">
+                            <button class="dash-tab-btn active" id="btn-tab-skills" onclick="switchDashboardTab('skills')"><i class="fas fa-chart-pie"></i> Skills Data</button>
+                            <button class="dash-tab-btn" id="btn-tab-milestones" onclick="switchDashboardTab('milestones')"><i class="fas fa-medal"></i> Impact Metrics</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-content-box">
+                        <!-- Skills Tab Content -->
+                        <div id="dash-tab-skills" class="dash-content-pane active">
+                            <p class="dash-pane-intro">Interactive sector proficiency index:</p>
+                            <div class="interactive-chart-container">
+                                <div class="chart-metric-bar">
+                                    <div class="bar-info">
+                                        <span>Data Engineering (SQL, ETL, DB Modeling)</span>
+                                        <span class="bar-pct">92%</span>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 92%; background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-yellow) 100%);"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-metric-bar">
+                                    <div class="bar-info">
+                                        <span>BI & Visualization (Power BI, Tableau)</span>
+                                        <span class="bar-pct">95%</span>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 95%; background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-yellow) 100%);"></div>
+                                    </div>
+                                </div>
+                                <div class="chart-metric-bar">
+                                    <div class="bar-info">
+                                        <span>Statistical Analysis & Python</span>
+                                        <span class="bar-pct">88%</span>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 88%; background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-yellow) 100%);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skills-detail-box" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.2rem;">
+                                <h4 style="font-size: 0.95rem; margin-bottom: 0.8rem; color: var(--accent-yellow);"><i class="fas fa-tools"></i> Core Tools & Technologies</h4>
+                                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+                                    <strong>Languages & Databases:</strong> Python (Pandas, NumPy, Matplotlib, Seaborn), SQL (MySQL, PostgreSQL), Excel (Pivot Tables, Power Query)
+                                    <br>
+                                    <strong>BI Visualization:</strong> Power BI, Tableau, DAX Formulas, Data Modeling, ETL/ELT Processes
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Milestones Tab Content -->
+                        <div id="dash-tab-milestones" class="dash-content-pane">
+                            <p class="dash-pane-intro">Key training & career analytics benchmarks:</p>
+                            <div class="metrics-grid">
+                                <div class="metric-mini-card">
+                                    <span class="metric-num">98%</span>
+                                    <span class="metric-lbl">NTI / CIB Score</span>
+                                </div>
+                                <div class="metric-mini-card">
+                                    <span class="metric-num">8+</span>
+                                    <span class="metric-lbl">Real-World Projects</span>
+                                </div>
+                                <div class="metric-mini-card">
+                                    <span class="metric-num">120+</span>
+                                    <span class="metric-lbl">Training Hours</span>
+                                </div>
+                            </div>
+                            
+                            <div class="milestones-detail-box" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                                <h4 style="font-size: 0.95rem; margin-bottom: 0.2rem; color: var(--accent-blue);"><i class="fas fa-award"></i> Verified Credentials</h4>
+                                <div class="cert-item" style="font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--accent-yellow); font-size: 0.8rem;"></i> <span><strong>NTI Data Analytics Training:</strong> Score 98% (Jul 2025)</span>
+                                </div>
+                                <div class="cert-item" style="font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--accent-yellow); font-size: 0.8rem;"></i> <span><strong>CIB Internship (Data Track):</strong> Score 98% (Jul 2025)</span>
+                                </div>
+                                <div class="cert-item" style="font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem;">
+                                    <i class="fas fa-check-circle" style="color: var(--accent-yellow); font-size: 0.8rem;"></i> <span><strong>NTI Creativa Hub Trainee:</strong> Certified Graduate (Oct 2025)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -160,13 +251,13 @@
             <div class="timeline">
                 <div class="timeline-item card">
                     <div class="timeline-dot"></div>
-                    <span class="timeline-date">Expected Graduation: 2026</span>
-                    <h4 class="timeline-title">Bachelor of Computer Science</h4>
-                    <span class="timeline-subtitle">Beni Suief University</span>
+                    <span class="timeline-date">Expected Graduation: May 2026</span>
+                    <h4 class="timeline-title">Bachelor's Degree in Computer Science - Data Analysis Track</h4>
+                    <span class="timeline-subtitle">Beni Suef National University</span>
                     <p class="timeline-desc">
-                        Currently pursuing a Bachelor's degree in Computer Science with a strong focus on <strong>Data Analytics, Programming, and Database Systems</strong>. Developing solid problem-solving and analytical skills through academic and practical projects.
+                        Developing advanced analytical competencies with a dedicated curriculum in <strong>Data Mining, SQL Database Systems, Statistical Analysis, and Predictive Analytics</strong>. Applying computational techniques to resolve complex real-world data challenges.
                     </p>
-                    <div class="timeline-tag">CGPA: 3.14</div>
+                    <div class="timeline-tag">GPA: 3.14/4.0</div>
                 </div>
             </div>
         </section>
@@ -374,6 +465,38 @@
     <button class="scroll-to-top" id="scrollTopBtn" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
+
+    <!-- Floating Interactive Theme Switcher Widget -->
+    <div class="theme-switcher-widget" id="themeSwitcher">
+        <div class="theme-switcher-toggle" id="themeToggleBtn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="theme-switcher-title">Customize Accent</div>
+        <div class="theme-options-grid">
+            <button class="theme-opt-btn active" data-theme="cyber">
+                <span class="theme-color-dot"></span>
+                <span>Cyber Sky (Default)</span>
+            </button>
+            <button class="theme-opt-btn" data-theme="emerald">
+                <span class="theme-color-dot"></span>
+                <span>Emerald Gold</span>
+            </button>
+            <button class="theme-opt-btn" data-theme="retro">
+                <span class="theme-color-dot"></span>
+                <span>Retro Violet</span>
+            </button>
+        </div>
+        <div class="cursor-toggle-wrapper">
+            <span class="toggle-switch-lbl">Custom Cursor</span>
+            <div class="toggle-switch-btn active" id="cursorToggleSwitch">
+                <div class="toggle-switch-knob"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Ambient Follow Cursor Elements -->
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+    <div class="custom-cursor-ring" id="customCursorRing"></div>
 
     <footer>
         <div class="footer-container">
